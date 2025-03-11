@@ -1,14 +1,11 @@
 pipeline {
-    agent {
-        docker {
-            image 'maven:3.9.9-eclipse-temurin-21-alpine'
-            args '-v /c/Users/Checkout/.jenkins/workspace/EnigmaFirstPipeline_main:/workspace -w /workspace'
-        }
-    }
+    agent { docker { image 'maven:3.9.9-eclipse-temurin-21-alpine' } }
     stages {
-        stage('build') {
+        stage('Build') {
             steps {
+                echo 'Starting the build process'
                 sh 'mvn --version'
+                echo 'Build process completed'
             }
         }
     }
