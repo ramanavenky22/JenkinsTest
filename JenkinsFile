@@ -4,7 +4,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Running on an available agent'
-                sh 'node --eval "console.log(process.arch, process.platform)"'
+                bat 'node --eval "console.log(process.arch, process.platform)"'
             }
         }
     }
